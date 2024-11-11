@@ -35,3 +35,4 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           helm plugin install https://github.com/databus23/helm-diff
+          helm diff upgrade ${{ parameters.releaseName }} $(helmDir)/${{ parameters.helmChartName }} --version ${{ parameters.helmChartVersion }}
